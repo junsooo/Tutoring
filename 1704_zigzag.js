@@ -20,51 +20,53 @@ function turn_right(){
 function left_up(){
     drop_and_move()
     if(left_is_clear())
-    {   turn_left()
+    {   
+	turn_left()
         move()
         turn_right()
-	}
+    }
 }
 function right_up(){
     drop_and_move()
     if(right_is_clear())
     {	
-		turn_right()
+	turn_right()
         move()
         turn_left()
-	}
+    }
 }
 
 if(front_is_clear())
-{   
-	drop_and_move()
+{
+    drop_and_move()
     turn_left()
 }
     
 while(front_is_clear())
-{    while(left_is_clear()&&front_is_clear())
+{    
+    while(left_is_clear()&&front_is_clear())
         left_up()
     if(front_is_clear())
         drop_and_move()
     else
     {   
-		turn_right()
+	turn_right()
         drop_and_move()
         turn_left()
-	}
+    }
     turn_right()
     while(right_is_clear()&&front_is_clear())
 	right_up()
     if(front_is_clear())
     {
-		drop_and_move()
+	drop_and_move()
         turn_left()
-	}
+    }
     else
-	{
+    {
         turn_left()
         if(front_is_clear())
             drop_and_move()
-	}
+    }
 }
 drop_beepers()
